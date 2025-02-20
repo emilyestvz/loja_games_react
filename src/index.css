@@ -2,8 +2,10 @@
 @import "tailwindcss";
 
 /*Gerais*/
-body {
+body, html,
+#__next {
   font-family: 'Poppins', sans-serif;
+  height: 100%;
 }
 
 :root {
@@ -50,4 +52,5 @@ body {
     animation: float 6s ease-in-out infinite;
   }
   
+
   

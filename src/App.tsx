@@ -4,12 +4,12 @@ import Initial from './pages/initial/Initial.tsx'
 
 function App() {
   
-  return (
-    <>
+  return ( 
+    <div className='min-h-[73.5vh]'>
         <Routes>
           <Route path='/' element={<Initial />} />
-        </Routes> ,
-    </>
+        </Routes>
+    </div>
   )
 }
 

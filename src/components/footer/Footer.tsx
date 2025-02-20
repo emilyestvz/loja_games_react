@@ -1,6 +1,5 @@
 import { Github, Linkedin } from 'lucide-react'
 import styles from './Footer.module.css'
-import { motion } from 'framer-motion';
 
 function Footer() {
 
@@ -8,11 +7,11 @@ function Footer() {
 
     return (
         <>
-            <motion.nav
-            initial={{ y: -100 }}
-            animate={{ y: 0 }}
-            className="flex  justify-center backdrop-blur-sm border-t border-white/10 text-white">
-                <div className="container flex flex-col items-center py-4">
+            <nav
+            className="bottom-0 w-full backdrop-blur-sm 
+            border-t border-white/10 text-white z-10">
+                
+                <div className="container mx-auto flex flex-col items-center py-4">
                     <p className='text-xl font-medium'>
                         Todos os direitos reservados &copy; {data} |  Emily Cristiny Dias
                         </p>
@@ -26,7 +25,7 @@ function Footer() {
                         </a>
                     </div>
                 </div>
-            </motion.nav>
+            </nav>
         </>
     );
 };

@@ -3,7 +3,6 @@ import Button, { ButtonProps } from '@mui/material/Button';
 import { styled } from '@mui/material';
 import { purple } from '@mui/material/colors';
 import Navbar from '../../components/navbar/Navbar';
-import Footer from '../../components/footer/Footer';
 import { FloatingPaper } from '../../components/utils/floating-paper';
 import { RoboAnimation } from '../../components/utils/robo-animation';
 

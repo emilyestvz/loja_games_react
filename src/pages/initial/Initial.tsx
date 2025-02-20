@@ -63,7 +63,7 @@ export default function Initial() {
         </div>
 
         {/* Robô animado */}
-      <div className="absolute bottom-0 right-0 w-280 h-140">
+      <div className='absolute bottom-0 right-0 w-280 h-140'>
         <RoboAnimation />
       </div>
     </main>

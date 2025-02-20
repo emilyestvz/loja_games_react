@@ -8,10 +8,10 @@ function Footer() {
     return (
         <>
             <nav
-            className="bottom-0 w-full backdrop-blur-sm 
-            border-t border-white/10 text-white z-10">
+            className='bottom-0 w-full backdrop-blur-sm 
+            border-t border-white/10 text-white z-10'>
                 
-                <div className="container mx-auto flex flex-col items-center py-4">
+                <div className='container mx-auto flex flex-col items-center py-4'>
                     <p className='text-xl font-medium'>
                         Todos os direitos reservados &copy; {data} |  Emily Cristiny Dias
                         </p>

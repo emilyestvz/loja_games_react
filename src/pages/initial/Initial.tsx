@@ -1,26 +1,11 @@
-import { SparklesCore } from '../../components/utils/sparkles';
 import Button, { ButtonProps } from '@mui/material/Button';
 import { styled } from '@mui/material';
 import { purple } from '@mui/material/colors';
 import Navbar from '../../components/navbar/Navbar';
-import { FloatingPaper } from '../../components/utils/floating-paper';
-import { RoboAnimation } from '../../components/utils/robo-animation';
+import { FloatingPaper } from '../../lib/utils/floating-paper';
+import { RoboAnimation } from '../../lib/utils/robo-animation';
+import { SparklesCore } from '../../lib/utils/sparkles';
 
-// Componente para Config de Button
-const ColorButton = styled(Button)<ButtonProps>(({ theme }) => ({
-  color: theme.palette.getContrastText(purple[500]),
-  borderColor: purple[800],
-  fontWeight: 680,
-
-  '&:focus': {
-    backgroundColor: purple[600],
-  },
-
-  '&:hover': {
-    backgroundColor: purple[800],
-    transition: 'box-shadow 0.5s ease-in-out',
-  },
-}));
 
 export default function Initial() {
 
@@ -70,3 +55,18 @@ export default function Initial() {
 );
 };
 
+// Componente para Config de Button
+const ColorButton = styled(Button)<ButtonProps>(({ theme }) => ({
+  color: theme.palette.getContrastText(purple[500]),
+  borderColor: purple[800],
+  fontWeight: 680,
+
+  '&:focus': {
+    backgroundColor: purple[600],
+  },
+
+  '&:hover': {
+    backgroundColor: purple[800],
+    transition: 'box-shadow 0.5s ease-in-out',
+  },
+}));

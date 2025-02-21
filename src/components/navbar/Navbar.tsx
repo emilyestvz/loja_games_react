@@ -24,13 +24,15 @@ const Navbar = () => {
          <input
            type='text'
            placeholder='Search...'
-          className=' text-white hidden md:block border border-gray-300 rounded px-4 py-2 text-sm focus:outline-none focus:ring-purple-500 '
+          className=' text-white hidden w-3xl mx- md:block border
+           border-gray-300 rounded px-4 py-2 text-sm focus:outline-none
+           focus:ring-purple-500 '
          />
 
         {/* Botões e menu mobile */}
         <Stack spacing={2} direction='row' className='flex gap-4'>
-          <NavButton href='/'>Sign In</NavButton>
-          <NavButton href='/'>Get Started</NavButton>
+          <NavButton href='/login'>Sign In</NavButton>
+          <NavButton href='/register'>Get Started</NavButton>
 
     
           {/* TODO: 

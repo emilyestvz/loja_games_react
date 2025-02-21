@@ -4,6 +4,7 @@ import { cn } from '../../lib/utils/cn';
 import { Button } from '../ui/button';
 import { Input } from '../ui/input';
 import { Label } from '../ui/label';
+import { Link } from 'react-router-dom';
 
 
 export function LoginForm({
@@ -56,9 +57,9 @@ export function LoginForm({
       </div>
       <div className='text-center text-sm'>
         Don&apos;t have an account?{' '}
-        <a href='#' className='underline underline-offset-4'>
+        <Link to='/register' className='underline underline-offset-4'>
           Register!
-        </a>
+        </Link>
       </div>
     </form>
   )

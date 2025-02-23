@@ -5,6 +5,7 @@ import Navbar from '../../components/navbar/Navbar';
 import { FloatingPaper } from '../../lib/utils/floating-paper';
 import { RoboAnimation } from '../../lib/utils/robo-animation';
 import { SparklesCore } from '../../lib/utils/sparkles';
+import NavbarUser from '../../components/navbar/NavbarUser';
 
 
 export default function Initial() {

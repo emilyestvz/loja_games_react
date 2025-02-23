@@ -1,0 +1,22 @@
+.card {
+    width: 500px;
+    height: 150px;
+    margin: 25px 0 25px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+  
+
+.card-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    width: 100%;
+
+}

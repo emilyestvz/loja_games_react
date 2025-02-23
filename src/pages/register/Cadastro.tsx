@@ -1,22 +1,74 @@
 import { Bot } from 'lucide-react';
-import { useState } from 'react';
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import { Label } from '../../components/ui/label';
 import { Input } from '../../components/ui/input';
 import { Button } from '../../components/ui/button';
 import { cn } from '../../lib/utils/cn';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import Usuario from '../../models/Usuario';
+import { cadastrarUsuario } from '../../services/Service';
+import { toast } from 'react-toastify';
 
 export default function AuthPage() {
-   const [isLogin, setIsLogin] = useState(true); // Estado para alternar entre login e cadastro
+   // Hook
+  const navigate = useNavigate();
 
-   const handleFormSubmit = (event) => {
-     event.preventDefault();
-     // Aqui você faria a lógica de envio do formulário,
-     // seja para login ou cadastro, dependendo do valor de 'isLogin'.
-     console.log(isLogin ? "Enviando formulário de login" : "Enviando formulário de cadastro");
+  // States
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const [confirmarSenha, setConfirmarSenha] = useState<string>('');
+
+  const [usuario, setUsuario] = useState<Usuario>({
+    id: 0,
+    nome: '',
+    usuario: '',
+    senha: '',
+    foto: '',
+  });
+
+  useEffect(() => {
+    if (usuario.id !== 0)
+      retornar()
+  }, [usuario])
+
+  const retornar = async () => {
+    navigate('/login')
+  }
+
+  const atualizarEstado = (e: ChangeEvent<HTMLInputElement>) => {
+    setUsuario({
+      ...usuario,
+      [e.target.name]: e.target.value
+    });
+  }
+
+  const handleConfirmarSenha = (e: ChangeEvent<HTMLInputElement>) => {
+    return setConfirmarSenha(e.target.value);
+  }
+
+  async function cadastrarNovoUsuario(e: FormEvent<HTMLFormElement>){
+    e.preventDefault();
+
+    if(confirmarSenha === usuario.senha && usuario.senha.length >= 8){
+      setIsLoading(true);
+
+      try {
+        await cadastrarUsuario('/usuarios/cadastrar', usuario, setUsuario)
+        toast.dark('Usuário cadastrado com sucesso! ✨')
+
+      } catch(error) {
+        toast.dark('Ocorreu um erro ao cadastrar o usuário. ❌');
+        setIsLoading(false);
+      }
+
+    } else {
+      toast.dark('Senha inválida ou não confere. ❌');
+      setUsuario({...usuario, senha:''});
+      setConfirmarSenha('');
     }
 
-
+    setIsLoading(false);
+  }
   return (
     <div className='grid min-h-svh lg:grid-cols-2'>
 

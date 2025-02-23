@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Bot, Menu as MenuIcon, X } from 'lucide-react';
+import { Bot, Menu as MenuIcon, ShoppingCart, User, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Stack } from '@mui/material';
 
 
-const Navbar = () => {
+const NavbarUser = () => {
 
    return (
      <>
@@ -20,10 +20,23 @@ const Navbar = () => {
            <span className='text-white font-medium text-xl'>TheUniverse</span>
          </Link>
 
+         {/* Barra de busca */}
+         <input
+           type='text'
+           placeholder='Search...'
+          className=' text-white hidden w-3xl mx- md:block border
+           border-gray-300 rounded px-4 py-2 text-sm focus:outline-none
+           focus:ring-purple-500 '
+         />
+
         {/* Botões e menu mobile */}
         <Stack spacing={2} direction='row' className='flex gap-4'>
-          <NavButton href='/login'>Sign In</NavButton>
-          <NavButton href='/register'>Get Started</NavButton>
+          <NavButton href='/categorias'>Categories</NavButton>
+          <NavButton href='/produtos'>Products</NavButton>
+          <NavButton href='/login'>Sair</NavButton>
+          <User color="#ffffff" />
+          <ShoppingCart color="#ffffff" />
+
 
     
           {/* TODO: 
@@ -43,7 +56,7 @@ const Navbar = () => {
    );
  };
 
- export default Navbar;
+ export default NavbarUser;
 
  function NavButton({ href, children }: { href: string; children: React.ReactNode }) {
    return (
